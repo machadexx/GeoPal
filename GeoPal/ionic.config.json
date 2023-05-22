@@ -1,0 +1,7 @@
+{
+  "name": "GeoPal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
