@@ -111,8 +111,8 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss","node_modules/leaflet/dist/leaflet.css"],
-            "scripts": ["node_modules/leaflet/dist/leaflet.js"]
+            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "scripts": []
           },
           "configurations": {
             "ci": {

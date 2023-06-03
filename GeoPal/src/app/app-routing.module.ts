@@ -12,12 +12,24 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'menu-amigos',
-    loadChildren: () => import('./menu-amigos/menu-amigos.module').then( m => m.MenuAmigosPageModule)
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'friends-menu',
+    loadChildren: () => import('./friends-menu/friends-menu.module').then( m => m.FriendsMenuPageModule)
   },
 ];
 

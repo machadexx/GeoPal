@@ -13,12 +13,8 @@ ion-item {
 
 ion-item img {
   display: block;
-  margin: 100px auto 0;
+  margin: 0 auto;
   max-width: 100%;
-}
-
-.button-container {
-  margin-top: 75px;
 }
 
 .button_login {
@@ -26,17 +22,11 @@ ion-item img {
   margin: 0 auto;
 }
 
-.button_register {
-  max-width: 200px;
-  margin: 0 auto;
-}
 
-
-.home-label {
+.login-label {
   text-align: center;
   font-weight: bold;
-  margin-top: 75px;
-  font-size: 30px;
+  margin-bottom: 20px;
   font-family: "Helvetica", sans-serif;
 }
 

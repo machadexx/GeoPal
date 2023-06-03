@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Os Meus Amigos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Os Meus Amigos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let amigo of meusAmigos">
+      <ion-avatar slot="start">
+        <ion-img [src]="amigo.avatar"></ion-img>
+      </ion-avatar>
+      <ion-label>{{amigo.nome}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
