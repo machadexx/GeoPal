@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'friends-menu',
     loadChildren: () => import('./friends-menu/friends-menu.module').then( m => m.FriendsMenuPageModule)
+  },  {
+    path: 'notificacoes',
+    loadChildren: () => import('./notificacoes/notificacoes.module').then( m => m.NotificacoesPageModule)
   },
+
 ];
 
 @NgModule({

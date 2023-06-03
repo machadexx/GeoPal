@@ -1,13 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>map</ion-title>
+    <ion-img class="simbolo" slot="start" src="../../assets/images/geopal.png"></ion-img>
+    <ion-title>Notificações</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">map</ion-title>
+      <ion-title size="large">Mapa</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-img src="../../assets/images/mapa.png"/>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="amigos" [routerLink]="['/friends-menu']">
+        <ion-icon name="people-circle"></ion-icon>
+        Amigos
+      </ion-tab-button>
+      <ion-tab-button tab="mapa" [routerLink]="['/map']">
+        <ion-icon name="map"></ion-icon>
+        Mapa
+      </ion-tab-button>
+      <ion-tab-button tab="notificacoes" [routerLink]="['/notificacoes']">
+        <ion-icon name="mail-outline"></ion-icon>
+        Notificações
+      </ion-tab-button>
+      <ion-tab-button tab="perfil" [routerLink]="['/profile']">
+        <ion-icon name="person-circle"></ion-icon>
+        Perfil
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
 </ion-content>

@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-img class="simbolo" slot="start" src="../../assets/images/geopal.png"></ion-img>
+    <ion-title>Notificações</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">notificacoes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-img class="icon" src="../../assets/images/Notif.png"/>
+      <ion-card-title>
+        NOS Primavera Sound 2023
+      </ion-card-title>
+      <ion-card-subtitle>Parque da Cidade do Porto</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      02 Jun a 08 Jun
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-img class="icon" src="../../assets/images/Notif.png"/>
+      <ion-card-title>Serralves em Festa 2023</ion-card-title>
+      <ion-card-subtitle>Serralves</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      02 Jun a 04 Jun
+    </ion-card-content>
+  </ion-card>
+  
+
+
+</ion-content>
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="amigos" [routerLink]="['/friends-menu']">
+      <ion-icon name="people-circle"></ion-icon>
+      Amigos
+    </ion-tab-button>
+    <ion-tab-button tab="mapa" [routerLink]="['/map']">
+      <ion-icon name="map"></ion-icon>
+      Mapa
+    </ion-tab-button>
+    <ion-tab-button tab="notificacoes" [routerLink]="['/notificacoes']">
+      <ion-icon name="mail-outline"></ion-icon>
+      Notificações
+    </ion-tab-button>
+    <ion-tab-button tab="perfil" [routerLink]="['/profile']">
+      <ion-icon name="person-circle"></ion-icon>
+      Perfil
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
