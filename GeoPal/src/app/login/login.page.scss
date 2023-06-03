@@ -4,6 +4,13 @@ ion-content {
   align-items: center;
 }
 
+.logo{
+  display: flex;
+  justify-content: center;
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
+
 ion-item {
   display: flex;
   flex-direction: column;
@@ -18,8 +25,10 @@ ion-item img {
 }
 
 .button_login {
+  display: flex;
   max-width: 200px;
   margin: 0 auto;
+  margin-top: 10%;
 }
 
 

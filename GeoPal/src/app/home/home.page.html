@@ -1,22 +1,18 @@
 <ion-content>
-  <div>
-    <ion-item>
-      <img src="../../assets/images/geopal.png">
-    </ion-item>
 
-    <ion-item>
-      <ion-label class="home-label">Bem-vindo!</ion-label>
-    </ion-item>
+  <div class="logo">
+      <ion-img src="../../assets/images/geopal.png"/>
   </div>
 
   <div class="ion-padding button-container">
+    
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button expand="full" color="primary" class="button_register" (click)="GoToRegister()">Registar</ion-button>
+          <ion-button color="primary" class="button_register" (click)="GoToRegister()">Registar</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button expand="full" color="primary" class="button_login" (click)="GoToLogin()">Entrar</ion-button>
+          <ion-button color="secondary" fill="outline" class="button_login" (click)="GoToLogin()">Entrar</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -4,18 +4,23 @@ ion-content {
   align-items: center;
 }
 
-ion-item {
+.logo{
+  display: flex;
+  justify-content: center;
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
+
+ion-img {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
+  width: 269px;
+  height: 219px;
+  align-items: center;
 }
 
-ion-item img {
-  display: block;
-  margin: 100px auto 0;
-  max-width: 100%;
-}
 
 .button-container {
   margin-top: 75px;
@@ -24,11 +29,15 @@ ion-item img {
 .button_login {
   max-width: 200px;
   margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
 }
 
 .button_register {
   max-width: 200px;
   margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
 }
 
 
