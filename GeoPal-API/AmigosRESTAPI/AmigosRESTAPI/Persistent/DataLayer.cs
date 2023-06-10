@@ -55,5 +55,49 @@ namespace AmigosRESTAPI.Persistent
             }
             return res;
         }
+
+        public List<Locais> GetAllLocais(out string erro)
+        {
+            erro = null;
+            List<Locais> res = new List<Locais>();
+
+            if (conn != null)
+            {
+                try
+                {
+                    conn.Open();
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        using (DbCommand cmd = new NpgsqlCommand(null, (NpgsqlConnection)conn))
+                        {
+                            cmd.CommandText = "Select idamigo, nome, urlfoto from amigo;";
+                            cmd.CommandType = CommandType.Text;
+                            DbDataReader dataReader = cmd.ExecuteReader(CommandBehavior.Default);
+                            while (dataReader.Read())
+                            {
+                                res.Add(new Locais
+                                {
+                                    localId = dataReader.GetInt32(0),
+                                    Nome = dataReader.GetString(1),
+                                    Coords = dataReader.GetString(3),
+                                });
+                            }
+                        }
+                    }
+                    else erro = "Operation Failed - Closed dataset";
+                }
+                catch (Exception ex)
+                {
+                    erro = ex.Message + "[" + ex.StackTrace + "]";
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return res;
+        }
+
+
     }
 }

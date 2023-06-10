@@ -218,12 +218,16 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AmigoController.cs" />
+    <Compile Include="Controllers\LocaisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Amigo.cs" />
     <Compile Include="Models\AmigoRepository.cs" />
     <Compile Include="Models\IAmigoRepository.cs" />
+    <Compile Include="Models\ILocaisRepository.cs" />
+    <Compile Include="Models\Locais.cs" />
+    <Compile Include="Models\LocalRepository.cs" />
     <Compile Include="Persistent\DataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
