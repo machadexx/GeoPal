@@ -218,16 +218,32 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AmigoController.cs" />
+    <Compile Include="Controllers\AtividadesController.cs" />
     <Compile Include="Controllers\LocaisController.cs" />
+    <Compile Include="Controllers\NotificacoesController.cs" />
+    <Compile Include="Controllers\UtilizadorController.cs" />
+    <Compile Include="Controllers\VizinhancaGeoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Amigo.cs" />
-    <Compile Include="Models\AmigoRepository.cs" />
-    <Compile Include="Models\IAmigoRepository.cs" />
-    <Compile Include="Models\ILocaisRepository.cs" />
-    <Compile Include="Models\Locais.cs" />
-    <Compile Include="Models\LocalRepository.cs" />
+    <Compile Include="Models\Amigo\Amigo.cs" />
+    <Compile Include="Models\Amigo\AmigoRepository.cs" />
+    <Compile Include="Models\Amigo\IAmigoRepository.cs" />
+    <Compile Include="Models\Atividades\AtividadesRepository.cs" />
+    <Compile Include="Models\Atividades\Atividades.cs" />
+    <Compile Include="Models\Atividades\IAtividadesRepository.cs" />
+    <Compile Include="Models\Locais\ILocaisRepository.cs" />
+    <Compile Include="Models\Locais\Locais.cs" />
+    <Compile Include="Models\Locais\LocalRepository.cs" />
+    <Compile Include="Models\Notificacoes\INotificacoesRepository.cs" />
+    <Compile Include="Models\Notificacoes\Notificacoes.cs" />
+    <Compile Include="Models\Notificacoes\NotificacoesRepository.cs" />
+    <Compile Include="Models\Utilizador\IUtilizadorRepository.cs" />
+    <Compile Include="Models\Utilizador\Utilizador.cs" />
+    <Compile Include="Models\Utilizador\UtilizadorRepository.cs" />
+    <Compile Include="Models\Vizinhanca\IVizinhancaGeoRepository.cs" />
+    <Compile Include="Models\Vizinhanca\VizinhancaGeo.cs" />
+    <Compile Include="Models\Vizinhanca\VizinhancaGeoRepository.cs" />
     <Compile Include="Persistent\DataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

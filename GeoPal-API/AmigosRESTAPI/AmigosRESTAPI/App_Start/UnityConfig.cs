@@ -1,4 +1,8 @@
 using AmigosRESTAPI.Models;
+using AmigosRESTAPI.Models.Atividades;
+using AmigosRESTAPI.Models.Notificacoes;
+using AmigosRESTAPI.Models.Utilizador;
+using AmigosRESTAPI.Models.Vizinhanca;
 using System.Web.Http;
 using Unity;
 using Unity.Lifetime;
@@ -19,6 +23,10 @@ namespace AmigosRESTAPI
             
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
             container.RegisterType<IAmigoRepository, AmigoRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IUtilizadorRepository, UtilizadorRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IVizinhancaGeoRepository, VizinhancaGeoRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IAtividadesRepository, AtividadesRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<INotificacoesRepository, NotificacoesRepository>(new HierarchicalLifetimeManager());
         }
     }
 }
