@@ -10,13 +10,20 @@
     </ion-item>
 
     <ion-item>
-      <ion-input type="text" placeholder="alguem@dominio.com"></ion-input>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" placeholder="Nome" [(ngModel)]="registo.nome"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" placeholder="********"></ion-input>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" placeholder="alguem@dominio.com" [(ngModel)]="registo.email"></ion-input>
     </ion-item>
 
-    <ion-button color="primary" class="button_register">Registar</ion-button>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" placeholder="********" [(ngModel)]="registo.password"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" class="button_register" (click)="registrar(registo)">Registar</ion-button>
   </div>
 </ion-content>
