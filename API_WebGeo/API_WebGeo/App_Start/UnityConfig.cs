@@ -1,5 +1,6 @@
 using API_WebGeo.Models.Login;
 using API_WebGeo.Models.Registo;
+using API_WebGeo.Models.Utilizador;
 using System.Web.Http;
 using Unity;
 using Unity.Lifetime;
@@ -23,6 +24,8 @@ namespace API_WebGeo
             container.RegisterType<IRegistoRepository, RegistoRepository>(new HierarchicalLifetimeManager());
 
             container.RegisterType<ILoginRepository, LoginRepository>(new HierarchicalLifetimeManager());
+
+            container.RegisterType<IUtilizadorRepository, UtilizadorRepository>(new HierarchicalLifetimeManager());
         }
     }
 }

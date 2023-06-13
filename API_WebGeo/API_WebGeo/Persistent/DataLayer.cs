@@ -95,7 +95,9 @@ namespace API_WebGeo.Persistent
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Utilizador WHERE Email = @Email";
+                string query = "SELECT UtilizadorID, Nome, Email, Password, ST_X(coordenadas) AS Coordenadas_latitude, ST_Y(coordenadas) AS Coordenadas_longitude FROM Utilizador WHERE Email = @Email";
+
+
                 NpgsqlCommand command = new NpgsqlCommand(query, (NpgsqlConnection)conn);
                 command.Parameters.AddWithValue("@Email", email);
 
@@ -108,10 +110,14 @@ namespace API_WebGeo.Persistent
                             UtilizadorID = (int)reader["UtilizadorID"],
                             Nome = (string)reader["Nome"],
                             Email = (string)reader["Email"],
-                            Password = (string)reader["Password"]
+                            Password = (string)reader["Password"],
+                            Coordenadas_latitude = reader.IsDBNull(reader.GetOrdinal("Coordenadas_latitude")) ? (double?)null : Convert.ToDouble(reader["Coordenadas_latitude"]),
+                            Coordenadas_longitude = reader.IsDBNull(reader.GetOrdinal("Coordenadas_longitude")) ? (double?)null : Convert.ToDouble(reader["Coordenadas_longitude"])
                         };
 
+
                         return user;
+
                     }
                 }
 
@@ -120,6 +126,30 @@ namespace API_WebGeo.Persistent
             catch (Exception ex)
             {
                 
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public async Task<int> DeleteUtilizador(int utilizadorID)
+        {
+            try
+            {
+                conn.Open();
+
+                string query = "DELETE FROM Utilizador WHERE UtilizadorID = @UtilizadorID";
+                NpgsqlCommand command = new NpgsqlCommand(query, (NpgsqlConnection)conn);
+                command.Parameters.AddWithValue("@UtilizadorID", utilizadorID);
+
+                int rowsAffected = await command.ExecuteNonQueryAsync();
+
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally

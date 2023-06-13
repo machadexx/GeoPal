@@ -6,33 +6,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-card>
-      <ion-card-content>
-        <ion-item lines="none">
-          <!-- Quando se passa o rato aparecer change image -->
-          <ion-img src="../../assets/images/boneco1.png"/>
-        </ion-item>
-        <ion-card-header>
-          <ion-card-title>Nome do User 1</ion-card-title>
-        </ion-card-header>
-        <ion-item lines="none">
-        <ion-label>Email</ion-label>
+  <ion-card *ngIf="userProfile">
+    <ion-card-content>
+      <ion-item lines="none">
+        <!-- Quando se passa o rato aparecer change image -->
+        <ion-img src="../../assets/images/boneco1.png"></ion-img>
+      </ion-item>
+      <ion-card-header>
+        <ion-card-title>{{ userProfile.Nome }}</ion-card-title>
+      </ion-card-header>
+      <ion-item lines="none">
+        <ion-label>Email:</ion-label>
         <!-- <ion-input label="Input with placeholder" placeholder="Enter company name"></ion-input> -->
-        <!-- <ion-text>{{user.email}}</ion-text> -->
-        </ion-item>
-        <ion-item lines="none">
-          <ion-label>Idade</ion-label>
-          <!-- <ion-text>{{user.age}}</ion-text> -->
-        </ion-item>
+        <ion-text>{{userProfile.Email}}</ion-text>
+      </ion-item>
 
-        <ion-item lines="none">
-          <ion-label>Localização</ion-label>
-          <!-- <ion-text>{{user.location}}</ion-text> -->
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
+      <ion-item lines="none">
+        <ion-label>Localização:</ion-label>
+        <ion-text>{{ localizacao }}</ion-text>
+      </ion-item>
 
-    
+
+    </ion-card-content>
+  </ion-card>
+
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="amigos" [routerLink]="['/friends-menu']">
@@ -57,10 +54,10 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button color="primary" [routerLink]="['/home']" class="button">Sair</ion-button>
+        <ion-button color="primary" (click)="sair()" class="button">Sair</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="secondary" fill="outline" [routerLink]="['/home']"  class="button">Eliminar conta</ion-button>
+        <ion-button color="secondary" fill="outline" (click)="eliminarConta()" class="button">Eliminar conta</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -220,6 +220,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistoController.cs" />
+    <Compile Include="Controllers\UtilizadorController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -230,7 +231,9 @@
     <Compile Include="Models\Registo\IRegistoRepository.cs" />
     <Compile Include="Models\Registo\Registo.cs" />
     <Compile Include="Models\Registo\RegistoRepository.cs" />
+    <Compile Include="Models\Utilizador\IUtilizadorRepository.cs" />
     <Compile Include="Models\Utilizador\Utilizador.cs" />
+    <Compile Include="Models\Utilizador\UtilizadorRepository.cs" />
     <Compile Include="Persistent\DataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -289,6 +292,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Registo\" />
+    <Folder Include="Views\Utilizador\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

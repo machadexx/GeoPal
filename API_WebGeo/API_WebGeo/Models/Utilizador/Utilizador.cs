@@ -9,17 +9,18 @@ namespace API_WebGeo.Models.Utilizador
     public class Utilizador
     {
         public int UtilizadorID { get; set; }
-
-        [Required]
+        
         public string Nome { get; set; }
-
-        [Required]
+        
         public string Email { get; set; }
-
-        [Required]
+        
         public string Password { get; set; }
 
         public int RaioVizinhança { get; set; }
+
+        public double? Coordenadas_latitude { get; set; }
+
+        public double? Coordenadas_longitude { get; set; }
 
         public Utilizador() { }
 
