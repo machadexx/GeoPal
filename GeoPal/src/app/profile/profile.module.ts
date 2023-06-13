@@ -8,12 +8,17 @@ import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
 
+import { MapComponent } from '../map/map.component';
+import { MapaModule } from '../mapa/mapa.module';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule
+    ProfilePageRoutingModule,
+    MapaModule
   ],
   declarations: [ProfilePage]
 })

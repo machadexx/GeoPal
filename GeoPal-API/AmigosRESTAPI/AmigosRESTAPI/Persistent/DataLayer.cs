@@ -98,6 +98,48 @@ namespace AmigosRESTAPI.Persistent
             return res;
         }
 
+        public List<Atividades> GetAllAtividades(out string erro)
+        {
+            erro = null;
+            List<Atividades> res = new List<Atividades>();
+
+            if (conn != null)
+            {
+                try
+                {
+                    conn.Open();
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        using (DbCommand cmd = new NpgsqlCommand(null, (NpgsqlConnection)conn))
+                        {
+                            cmd.CommandText = "SELECT * FROM atividades;";
+                            cmd.CommandType = CommandType.Text;
+                            DbDataReader dataReader = cmd.ExecuteReader(CommandBehavior.Default);
+                            while (dataReader.Read())
+                            {
+                                res.Add(new Atividades
+                                {
+                                    localId = dataReader.GetInt32(0),
+                                    Nome = dataReader.GetString(1),
+                                    Coords = dataReader.GetString(3),
+                                });
+                            }
+                        }
+                    }
+                    else erro = "Operation Failed - Closed dataset";
+                }
+                catch (Exception ex)
+                {
+                    erro = ex.Message + "[" + ex.StackTrace + "]";
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return res;
+        }
+
 
     }
 }

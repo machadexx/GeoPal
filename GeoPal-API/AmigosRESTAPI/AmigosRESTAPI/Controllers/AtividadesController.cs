@@ -26,5 +26,10 @@ namespace AmigosRESTAPI.Controllers
         {
             return repository.GetAll();
         }
+        [Route("api/atividades/{id}")]
+        public IEnumerable<Atividades> GetAtividade()
+        {
+            return repository.GetAtividade();
+        }
     }
 }

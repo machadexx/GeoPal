@@ -15,5 +15,12 @@ namespace AmigosRESTAPI.Models.Atividades
                 new Atividades {Id = 1, VizinhancaId = 1, Nome = "atividade", Coordenadas = "123", Inicio = "132", Fim = "321", Localizacao = "asd"},
             };
         }
+        public IEnumerable<Atividades> GetAtividade()
+        {
+            //mockAtividades
+            return new Atividades[] {
+                new Atividades {Id = 1, Nome = "atividade"},
+            };
+        }
     }
 }

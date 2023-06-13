@@ -29,10 +29,23 @@
           <ion-label>Localização</ion-label>
           <!-- <ion-text>{{user.location}}</ion-text> -->
         </ion-item>
+        <app-map></app-map>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button color="primary" [routerLink]="['/home']" class="button">Sair</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button color="secondary" fill="outline" [routerLink]="['/home']"  class="button">Eliminar conta</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-card-content>
     </ion-card>
+    
 
     
+
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="amigos" [routerLink]="['/friends-menu']">
@@ -52,17 +65,14 @@
         Perfil
       </ion-tab-button>
     </ion-tab-bar>
+    
   </ion-tabs>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-button color="primary" [routerLink]="['/home']" class="button">Sair</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="secondary" fill="outline" [routerLink]="['/home']"  class="button">Eliminar conta</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  
+
+  
+  
+
+
 
 </ion-content>

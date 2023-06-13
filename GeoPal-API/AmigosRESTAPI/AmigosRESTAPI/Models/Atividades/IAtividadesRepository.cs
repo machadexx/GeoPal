@@ -8,5 +8,6 @@ namespace AmigosRESTAPI.Models.Atividades
     public interface IAtividadesRepository
     {
         IEnumerable<Atividades> GetAll();
+        IEnumerable<Atividades> GetAtividade();
     }
 }
