@@ -1,4 +1,6 @@
 ﻿using AmigosRESTAPI.Models;
+using AmigosRESTAPI.Models.Atividades;
+using AmigosRESTAPI.Models.Utilizador;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -32,16 +34,16 @@ namespace AmigosRESTAPI.Persistent
                     {
                         using (DbCommand cmd = new NpgsqlCommand(null, (NpgsqlConnection)conn))
                         {
-                            cmd.CommandText = "Select idamigo, nome, urlfoto from amigo;";
+                            cmd.CommandText = "Select * from amigo;";
                             cmd.CommandType = CommandType.Text;
                             DbDataReader dataReader = cmd.ExecuteReader(CommandBehavior.Default);
                             while (dataReader.Read())
                             {
                                 res.Add(new Amigo
                                 {
-                                    IdAmigo = dataReader.GetInt32(0),
-                                    Nome = dataReader.GetString(1),
-                                    Urlfoto = dataReader.IsDBNull(2) ? "" : dataReader.GetString(2),
+                                    Utilizador = dataReader.GetInt32(0),
+                                    Utilizador2 = dataReader.GetInt32(0),
+                                    Inicio = dataReader.GetString(0),
                                 });
                             }
                         }
@@ -55,6 +57,52 @@ namespace AmigosRESTAPI.Persistent
             }
             return res;
         }
+
+        public List<Utilizador> GetAllUtilizador(out string erro)
+        {
+            erro = null;
+            List<Utilizador> res = new List<Utilizador>();
+
+            if (conn != null)
+            {
+                try
+                {
+                    conn.Open();
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        using (DbCommand cmd = new NpgsqlCommand(null, (NpgsqlConnection)conn))
+                        {
+                            cmd.CommandText = "SELECT * FROM Utilizador;";
+                            cmd.CommandType = CommandType.Text;
+                            DbDataReader dataReader = cmd.ExecuteReader(CommandBehavior.Default);
+                            while (dataReader.Read())
+                            {
+                                res.Add(new Utilizador
+                                {
+                                    UtilizadorID = dataReader.GetInt32(0),
+                                    Nome = dataReader.GetString(1),
+                                    Email = dataReader.GetString(2),
+                                    Password = dataReader.GetString(3),
+                                    Coordenadas = dataReader.GetString(4),
+                                    RaioVizinhanca = dataReader.GetInt32(5)
+                                });
+                            }
+                        }
+                    }
+                    else erro = "Operation Failed - Closed dataset";
+                }
+                catch (Exception ex)
+                {
+                    erro = ex.Message + "[" + ex.StackTrace + "]";
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return res;
+        }
+
 
         public List<Locais> GetAllLocais(out string erro)
         {
@@ -70,7 +118,7 @@ namespace AmigosRESTAPI.Persistent
                     {
                         using (DbCommand cmd = new NpgsqlCommand(null, (NpgsqlConnection)conn))
                         {
-                            cmd.CommandText = "Select idamigo, nome, urlfoto from amigo;";
+                            cmd.CommandText = "Select vizinhancaid, utilizadorid, nome, descriçao from vizinhanca_geo;";
                             cmd.CommandType = CommandType.Text;
                             DbDataReader dataReader = cmd.ExecuteReader(CommandBehavior.Default);
                             while (dataReader.Read())
@@ -119,9 +167,9 @@ namespace AmigosRESTAPI.Persistent
                             {
                                 res.Add(new Atividades
                                 {
-                                    localId = dataReader.GetInt32(0),
+                                    Id = dataReader.GetInt32(0),
                                     Nome = dataReader.GetString(1),
-                                    Coords = dataReader.GetString(3),
+                                    Coordenadas = dataReader.GetString(3),
                                 });
                             }
                         }

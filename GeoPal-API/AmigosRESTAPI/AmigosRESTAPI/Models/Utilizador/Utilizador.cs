@@ -7,14 +7,14 @@ namespace AmigosRESTAPI.Models.Utilizador
 {
     public class Utilizador
     {
-        private int id;
+        private int utilizadorID;
         private string nome;
         private string email;
         private string password;
         private string coordenadas;
         private int raioVizinhanca;
 
-        public int Id { get => id; set => id = Math.Abs(value); }
+        public int UtilizadorID { get => utilizadorID; set => utilizadorID = Math.Abs(value); }
         public string Nome { get => nome; set => nome = value; }
         public string Email { get => email; set => email = value; }
         public string Password { get => password; set => password = value; }

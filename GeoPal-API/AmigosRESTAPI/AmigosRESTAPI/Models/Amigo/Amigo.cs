@@ -5,19 +5,19 @@ using System.Web;
 
 namespace AmigosRESTAPI.Models {
     public class Amigo {
-        private int idAmigo;
-        private string nome;
-        private string urlfoto;
+        private int utilizador;
+        private int utilizador2;
+        private string inicio;
 
-        public int IdAmigo { get => idAmigo; set => idAmigo = Math.Abs(value); }
-        public string Nome { get => nome; set => nome = value; }
-        public string Urlfoto { get => urlfoto; set => urlfoto = value; }
+        public int Utilizador { get => utilizador; set => utilizador = Math.Abs(value); }
+        public int Utilizador2 { get => utilizador2; set => utilizador2 = value; }
+        public string Inicio { get => inicio; set => inicio = value; }
 
         public Amigo() { }
 
         public override bool Equals(object obj) {
             if (obj != null && obj is Amigo)
-                return ((Amigo)obj).IdAmigo == this.idAmigo;
+                return ((Amigo)obj).utilizador == this.utilizador;
             else
                 return false;
         }
