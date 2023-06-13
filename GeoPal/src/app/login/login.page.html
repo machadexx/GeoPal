@@ -10,16 +10,18 @@
 
     <form (ngSubmit)="fazerLogin()">
       <ion-item>
-        <ion-label>Email</ion-label>
-        <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" placeholder="Email"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" placeholder="******"></ion-input>
       </ion-item>
-
-      <ion-button expand="full" type="submit">Login</ion-button>
+      <div class="btns">
+        <ion-button id="login" shape="round" type="submit">Login</ion-button>
+        <ion-button color="secondary" shape="round" fill="outline" [routerLink]="['/home']">Voltar</ion-button>
+      </div>
     </form>
   </div>
 </ion-content>

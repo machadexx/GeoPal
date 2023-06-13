@@ -4,6 +4,7 @@
     <ion-title>O Meu Mapa</ion-title>
   </ion-toolbar>
 </ion-header>
+<!-- <script src="script.js"></script> -->
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -14,7 +15,31 @@
 
   <!-- <ion-img src="../../assets/images/mapa.png"/> -->
   <!-- <app-map></app-map> -->
-    <app-map></app-map>
+  <div id="mapa">
+    <app-map ></app-map>
+    
+    <!-- <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+        map = new MapComponent.Map("map");
+        map.addLayer(new MapComponent.Layer.OSM());
+
+        var lonLat = new MapComponent.LonLat( 41.17267494234301, -8.670196292999067 )
+              .transform(
+                new MapComponent.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+              );
+              
+        var zoom=16;
+
+        var markers = new MapComponent.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+        
+        markers.addMarker(new MapComponent.Marker(lonLat));
+        
+        map.setCenter (lonLat, zoom);
+    </script> -->
+  </div>
+
     <!-- (click)="buscaValorMapChild()" -->
 
   <ion-tabs>

@@ -23,7 +23,9 @@
       <ion-label position="floating">Password</ion-label>
       <ion-input type="password" placeholder="********" [(ngModel)]="registo.password"></ion-input>
     </ion-item>
-
-    <ion-button color="primary" class="button_register" (click)="registrar(registo)">Registar</ion-button>
+    <div class="btns">
+    <ion-button id="registar" expand="full" shape="round" color="primary"  (click)="registrar(registo)">Registar</ion-button>
+    <ion-button expand="full" shape="round" fill="outline" [routerLink]="['/home']">Voltar</ion-button>
+  </div>
   </div>
 </ion-content>
