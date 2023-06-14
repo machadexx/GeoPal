@@ -8,10 +8,6 @@
 <ion-content [fullscreen]="true">
   <ion-card *ngIf="userProfile">
     <ion-card-content>
-      <ion-item lines="none">
-        <!-- Quando se passa o rato aparecer change image -->
-        <ion-img src="../../assets/images/boneco1.png"></ion-img>
-      </ion-item>
       <ion-card-header>
         <ion-card-title>{{ userProfile.Nome }}</ion-card-title>
       </ion-card-header>
@@ -29,6 +25,9 @@
 
     </ion-card-content>
   </ion-card>
+
+  <app-mapa-profile id="mapa" (locationConfirmed)="confirmarLocalizacao($event)"></app-mapa-profile>
+
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
@@ -61,7 +60,7 @@
       </ion-col>
     </ion-row>
 
-    <app-map id="mapa"></app-map>
+
   </ion-grid>
 
 </ion-content>

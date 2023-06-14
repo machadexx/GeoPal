@@ -11,6 +11,6 @@ import { MapComponent } from '../map/map.component';
   ],
   exports: [MapaModule.mapa]
 })
-export class MapaModule { 
+export class MapaModule {
   static mapa = MapComponent;
 }

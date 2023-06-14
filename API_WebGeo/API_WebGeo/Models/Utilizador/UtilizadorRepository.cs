@@ -53,7 +53,18 @@ namespace API_WebGeo.Models.Utilizador
             }
         }
 
-
+        public async Task<bool> UpdateUtilizador(Utilizador utilizador)
+        {
+            try
+            {
+                await dataLayer.UpdateUtilizador(utilizador);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
 
     }

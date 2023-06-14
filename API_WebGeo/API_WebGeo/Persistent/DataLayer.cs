@@ -321,8 +321,42 @@ namespace API_WebGeo.Persistent
                 conn.Close();
             }
         }
-        
 
+        public async Task<bool> UpdateUtilizador(Utilizador utilizador)
+        {
+            try
+            {
+                conn.Open();
+
+                string query = "UPDATE Utilizador SET coordenadas = ST_SetSRID(ST_MakePoint(@Latitude, @Longitude), 3763) WHERE UtilizadorID = @UtilizadorID RETURNING ST_X(coordenadas) AS Coordenadas_latitude, ST_Y(coordenadas) AS Coordenadas_longitude;";
+                NpgsqlCommand command = new NpgsqlCommand(query, (NpgsqlConnection)conn);                
+                command.Parameters.AddWithValue("@Latitude", utilizador.Coordenadas_latitude);
+                command.Parameters.AddWithValue("@Longitude", utilizador.Coordenadas_longitude);
+                
+
+                NpgsqlDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.Read())
+                {
+                    utilizador.Coordenadas_latitude = reader.GetDouble(0);
+                    utilizador.Coordenadas_longitude = reader.GetDouble(1);
+                }
+
+                reader.Close();
+
+                int rowsAffected = await command.ExecuteNonQueryAsync();
+
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
 
     }

@@ -15,9 +15,13 @@
 
   <!-- <ion-img src="../../assets/images/mapa.png"/> -->
   <!-- <app-map></app-map> -->
-  <div id="mapa">
-    <app-map (click)="buscaValorMapChild()"></app-map>
-    
+  <div id="map-component">
+    <app-map></app-map>
+  </div>
+
+
+
+
     <!-- <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
     <script>
         map = new MapComponent.Map("map");
@@ -28,17 +32,17 @@
                 new MapComponent.Projection("EPSG:4326"), // transform from WGS 1984
                 map.getProjectionObject() // to Spherical Mercator Projection
               );
-              
+
         var zoom=16;
 
         var markers = new MapComponent.Layer.Markers( "Markers" );
         map.addLayer(markers);
-        
+
         markers.addMarker(new MapComponent.Marker(lonLat));
-        
+
         map.setCenter (lonLat, zoom);
     </script> -->
-  </div>
+
 
     <!-- (click)="buscaValorMapChild()" -->
 
@@ -56,7 +60,7 @@
         <ion-icon name="mail-outline"></ion-icon>
         Notificações
       </ion-tab-button>
-      <ion-tab-button tab="perfil" [routerLink]="['/profile']">
+      <ion-tab-button tab="profile" [routerLink]="['/profile']">
         <ion-icon name="person-circle"></ion-icon>
         Perfil
       </ion-tab-button>

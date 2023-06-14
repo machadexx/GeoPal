@@ -28,6 +28,8 @@ namespace API_WebGeo
                 defaults: new { controller = "Registo", action = "Registar" }
             );
 
+
+
         }
     }
 }

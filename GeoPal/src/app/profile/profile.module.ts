@@ -8,7 +8,8 @@ import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
 
-import { MapComponent } from '../map/map.component';
+import { MapaProfileComponent } from '../mapa-profile/mapa-profile.component';
+
 import { MapaModule } from '../mapa/mapa.module';
 
 
@@ -20,6 +21,6 @@ import { MapaModule } from '../mapa/mapa.module';
     ProfilePageRoutingModule,
     MapaModule
   ],
-  declarations: [ProfilePage]
+  declarations: [ProfilePage, MapaProfileComponent]
 })
 export class ProfilePageModule {}

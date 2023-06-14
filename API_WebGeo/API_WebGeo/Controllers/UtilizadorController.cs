@@ -68,6 +68,29 @@ namespace API_WebGeo.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("api/update/{id}")]
+        public async Task<IHttpActionResult> UpdateUtilizador(int id, Utilizador utilizador)
+        {
+            try
+            {
+                utilizador.UtilizadorID = id;
+                bool result = await repository.UpdateUtilizador(utilizador);
+
+                if (result)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
 
 
     }

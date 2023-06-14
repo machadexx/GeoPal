@@ -12,5 +12,7 @@ namespace API_WebGeo.Models.Utilizador
 
         Task<bool> DeleteUtilizador(int utilizadorID);
 
+        Task<bool> UpdateUtilizador(Utilizador utilizador);
+
     }
 }
