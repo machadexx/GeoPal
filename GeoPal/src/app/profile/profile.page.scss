@@ -45,7 +45,15 @@
   }
 
 
-#mapaperfil{
-    height: 100%;
-    width: 100%;
-} 
+// #mapaperfil{
+//     height: 100%;
+//     width: 100%;
+// } 
+
+#mapa{
+  position: fixed;
+  width: 35%;
+  height: 40%;
+  margin-top: 5px;
+  z-index: 99999;
+}

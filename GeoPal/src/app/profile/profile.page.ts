@@ -46,26 +46,21 @@ export class ProfilePage implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-            // O usuário cancelou a exclusão, não faz nada
-            // Ou você pode exibir uma mensagem informando que a conta não foi excluída
             console.log('A exclusão da conta foi cancelada.');
           }
         },
         {
           text: 'OK',
           handler: () => {
-            // O usuário confirmou a exclusão, envia a solicitação DELETE para a API
+            // O user confirmou a exclusão, envia a solicitação DELETE para a API
             this.http.delete(apiUrl).subscribe(
               () => {
                 // A conta do utilizador foi eliminada com sucesso
-                // Faça qualquer ação necessária, como redirecionar para a página de login
                 console.log('Sua conta foi excluída com sucesso!');
-                // Redirecionar para a página inicial
                 window.location.href = "/home";
               },
               (error) => {
                 console.error(error);
-                // Trate o erro adequadamente, exibindo uma mensagem de erro ao utilizador, por exemplo
                 console.log('Ocorreu um erro ao excluir a conta. Por favor, tente novamente mais tarde.');
               }
             );
