@@ -21,7 +21,7 @@ export class MapComponent  implements AfterViewInit  {
       if(this.msgFromMapChild.length > 0){
         this.msgFromMapChild.pop();
       }
-      this.msgFromMapChild.push(ev.latlng);
+      console.log(ev.latlng);
     })
     MapComponent.invalidadeSize();
   }
