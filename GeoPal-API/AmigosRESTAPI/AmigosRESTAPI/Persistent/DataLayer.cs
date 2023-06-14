@@ -42,8 +42,8 @@ namespace AmigosRESTAPI.Persistent
                                 res.Add(new Amigo
                                 {
                                     Utilizador = dataReader.GetInt32(0),
-                                    Utilizador2 = dataReader.GetInt32(0),
-                                    Inicio = dataReader.GetString(0),
+                                    Utilizador2 = dataReader.GetInt32(1),
+                                    Inicio = dataReader.GetString(2),
                                 });
                             }
                         }
@@ -72,7 +72,7 @@ namespace AmigosRESTAPI.Persistent
                     {
                         using (DbCommand cmd = new NpgsqlCommand(null, (NpgsqlConnection)conn))
                         {
-                            cmd.CommandText = "SELECT * FROM Utilizador;";
+                            cmd.CommandText = "SELECT * FROM utilizador;";
                             cmd.CommandType = CommandType.Text;
                             DbDataReader dataReader = cmd.ExecuteReader(CommandBehavior.Default);
                             while (dataReader.Read())

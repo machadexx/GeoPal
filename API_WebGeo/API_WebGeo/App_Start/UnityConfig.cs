@@ -1,4 +1,6 @@
+using API_WebGeo.Models.Atividades;
 using API_WebGeo.Models.Login;
+using API_WebGeo.Models.Notificacoes;
 using API_WebGeo.Models.Registo;
 using API_WebGeo.Models.Utilizador;
 using System.Web.Http;
@@ -26,6 +28,11 @@ namespace API_WebGeo
             container.RegisterType<ILoginRepository, LoginRepository>(new HierarchicalLifetimeManager());
 
             container.RegisterType<IUtilizadorRepository, UtilizadorRepository>(new HierarchicalLifetimeManager());
+
+            container.RegisterType<IAtividadesRepository, AtividadesRepository>(new HierarchicalLifetimeManager());
+
+            container.RegisterType<INotificacoesRepository, NotificacoesRepository>(new HierarchicalLifetimeManager());
+
         }
     }
 }
